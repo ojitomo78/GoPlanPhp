@@ -2,35 +2,49 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Registrar Cliente</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>GoPlan | Agencia de Viajes</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-light">
-  <div class="container mt-5">
-    <h2 class="mb-4 text-center">Registrar Cliente</h2>
-    <form action="insertar_cliente.php" method="POST" class="p-4 bg-white rounded shadow-sm">
-      <div class="mb-3">
-        <label class="form-label">Nombre:</label>
-        <input type="text" name="nombre" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Documento:</label>
-        <input type="text" name="documento" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Teléfono:</label>
-        <input type="text" name="telefono" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Correo:</label>
-        <input type="email" name="correo" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Dirección:</label>
-        <input type="text" name="direccion" class="form-control" required>
-      </div>
-      <button type="submit" class="btn btn-primary w-100">Registrar</button>
-    </form>
-  </div>
+<body>
+  <header>
+    <h1>GoPlan Agencia de Viajes</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="registrar_cliente.html">Registro de Clientes</a>
+    </nav>
+  </header>
+
+  <section id="sobre-nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>En <strong>GoPlan</strong> convertimos tus sueños de viaje en experiencias inolvidables. 
+    Ofrecemos asesoría personalizada, los mejores destinos y precios adaptados a tu presupuesto.</p>
+  </section>
+
+  <section id="planes">
+    <h2>Planes Destacados</h2>
+
+    <div class="plan">
+      <h3>Plan Caribe</h3>
+      <p>Disfruta del sol, la playa y el mar con nuestro paquete todo incluido en Cartagena o San Andrés.</p>
+      <p><strong>Desde $1.200.000</strong></p>
+    </div>
+
+    <div class="plan">
+      <h3>Plan Aventura</h3>
+      <p>Explora la naturaleza y vive experiencias extremas en los mejores parques naturales de Colombia.</p>
+      <p><strong>Desde $950.000</strong></p>
+    </div>
+
+    <div class="plan">
+      <h3>Plan Internacional</h3>
+      <p>Viaja al extranjero y conoce culturas únicas con nuestros planes a Europa y Suramérica.</p>
+      <p><strong>Desde $3.500.000</strong></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 GoPlan - Todos los derechos reservados | Bogotá, Colombia</p>
+  </footer>
 </body>
 </html>
