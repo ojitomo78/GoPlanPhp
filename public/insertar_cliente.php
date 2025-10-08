@@ -2,8 +2,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-date_default_timezone_set('America/Bogota');
-
 $servername = "yamabiko.proxy.rlwy.net";
 $username   = "root";
 $password   = "ExNlzRDrivHkvSmhToLKgUJTSLPFklcD";
@@ -16,8 +14,6 @@ if ($conn->connect_error) {
     die("❌ Error de conexión: " . $conn->connect_error);
 }
 
-$conn->query("SET time_zone = '-05:00'");
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombre    = $_POST['nombre'] ?? '';
     $documento = $_POST['documento'] ?? '';
@@ -29,11 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("⚠️ Todos los campos son obligatorios.");
     }
 
-    $sql = "INSERT INTO clientes (nombre, documento, telefono, correo, direccion, fecha_res)
-            VALUES (?, ?, ?, ?, ?, NOW())";
+    $fecha_res = date('Y-m-d H:i:s', time() - 5 * 3600);
 
+    $sql = "INSERT INTO clientes (nombre, documento, telefono, correo, direccion, fecha_res)
+            VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss", $nombre, $documento, $telefono, $correo, $direccion);
+    $stmt->bind_param("ssssss", $nombre, $documento, $telefono, $correo, $direccion, $fecha_res);
 
     if ($stmt->execute()) {
         echo "<script>alert('✅ Cliente registrado exitosamente'); window.location.href='index.html';</script>";
