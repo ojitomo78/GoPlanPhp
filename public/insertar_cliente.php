@@ -3,7 +3,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 date_default_timezone_set('America/Bogota');
-$conn->query("SET time_zone = '-05:00'");
 
 $servername = "yamabiko.proxy.rlwy.net";
 $username   = "root";
@@ -16,6 +15,8 @@ $conn = new mysqli($servername, $username, $password, $database, $port);
 if ($conn->connect_error) {
     die("❌ Error de conexión: " . $conn->connect_error);
 }
+
+$conn->query("SET time_zone = '-05:00'");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombre    = $_POST['nombre'] ?? '';
