@@ -25,18 +25,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("⚠️ Todos los campos son obligatorios.");
     }
 
-    $stmt = $conn->prepare("INSERT INTO clientes (nombre, documento, telefono, correo, direccion) VALUES (?, ?, ?, ?, ?)");
+    $sql = "INSERT INTO clientes (nombre, documento, telefono, correo, direccion, fecha_res)
+            VALUES (?, ?, ?, ?, ?, NOW())";
+
+    $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssss", $nombre, $documento, $telefono, $correo, $direccion);
 
     if ($stmt->execute()) {
-        echo "✅ Cliente registrado correctamente.";
+        echo "<script>alert('✅ Cliente registrado exitosamente'); window.location.href='index.html';</script>";
     } else {
         echo "❌ Error al registrar cliente: " . $stmt->error;
     }
 
     $stmt->close();
-} else {
-    echo "⚠️ Acceso no permitido.";
 }
 
 $conn->close();
