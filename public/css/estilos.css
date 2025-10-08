@@ -106,7 +106,11 @@ footer {
 }
 
 #planes {
-  background-color: #fff2e0; /* un tono crema claro */
+  background-color: #ffe0b3; 
   padding: 2rem 1rem;
   border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+#planes h2 {
+  color: #d25e00;
 }
