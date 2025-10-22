@@ -1,5 +1,5 @@
 <?php
-include('../conexion.php');
+include('../php/conexion.php');
 
 $sql = "SELECT nombre_des, país, descripción, precio_base, categoría FROM destinos";
 $result = $conn->query($sql);
