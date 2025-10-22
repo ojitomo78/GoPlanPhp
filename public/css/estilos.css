@@ -79,50 +79,60 @@ section h2 {
 }
 
 /* ---------- GRID DE PLANES ---------- */
+/* Contenedor: cuadrícula responsiva */
 .planes-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  justify-items: center;
-  padding: 40px;
+  gap: 24px;            /* espacio entre tarjetas */
+  padding: 32px;
+  align-items: start;
 }
 
-/* ---------- TARJETA DE PLAN ---------- */
+/* Tarjeta de plan: tarjeta limpia + línea separadora abajo */
 .plan-card {
   background-color: #ffffff;
-  border: 2px solid #ffcc80;
-  border-radius: 15px;
-  padding: 20px;
+  border-radius: 8px;
+  padding: 18px;
   width: 100%;
-  max-width: 350px;
+  max-width: 380px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
   text-align: left;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
 }
 
+/* LÍNEA separadora al final de cada tarjeta */
+.plan-card::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #e6e0d6; /* color de la línea */
+  margin-top: 14px;
+  width: calc(100% + 40px); /* extiende un poco la línea fuera de la tarjeta */
+  transform: translateX(-20px);
+}
+
+/* Para evitar la línea en la última fila (opcional) */
+.planes-container > .plan-card:last-child::after {
+  display: none;
+}
+
+/* Hover sutil para que siga viéndose como tarjeta */
 .plan-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
 }
 
+/* Título con separación */
 .plan-card h2 {
   color: #ff9800;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #ffd699;
-  padding-bottom: 5px;
+  margin: 0 0 8px;
+  font-size: 1.1rem;
 }
 
+/* Texto */
 .plan-card p {
-  margin: 8px 0;
+  margin: 6px 0;
   line-height: 1.4;
-}
-
-.plan-card img {
-  width: 100%;
-  height: 180px;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-bottom: 10px;
 }
 
 /* ---------- BOTÓN VOLVER ---------- */
