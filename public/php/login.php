@@ -19,6 +19,6 @@ if ($result->num_rows > 0) {
     header("Location: ../index.php");
     exit;
 } else {
-    echo "<script>alert('Usuario o contraseña incorrectos');window.location='../pages/login.html';</script>";
+    echo "<script>alert('Usuario o contraseña incorrectos');window.location='../pages/login.php';</script>";
 }
 ?>
