@@ -30,5 +30,13 @@ $result = $conn->query($sql);
         echo "</div>";
       }
     } else {
-      ech
+      echo "<p>No hay destinos disponibles.</p>";
+    }
+    ?>
+  </section>
 
+  <footer>
+    <p>© 2025 GoPlan - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
