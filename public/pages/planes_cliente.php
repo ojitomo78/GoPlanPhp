@@ -7,7 +7,7 @@ if (!isset($_SESSION['usuario'])) {
   exit;
 }
 
-$sql = "SELECT * FROM itinerario";
+$sql = "SELECT * FROM itinerarios";
 $result = $conn->query($sql);
 ?>
 
