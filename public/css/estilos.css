@@ -79,60 +79,55 @@ section h2 {
 }
 
 /* ---------- GRID DE PLANES ---------- */
-/* Contenedor: cuadrícula responsiva */
+/* Contenedor: cuadrícula con más espacio */
 .planes-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;            /* espacio entre tarjetas */
-  padding: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;              /* ← más separación entre las tarjetas */
+  padding: 50px 60px;     /* ← más margen interno */
   align-items: start;
+  justify-items: center;
 }
 
-/* Tarjeta de plan: tarjeta limpia + línea separadora abajo */
+/* Tarjeta */
 .plan-card {
   background-color: #ffffff;
-  border-radius: 8px;
-  padding: 18px;
+  border-radius: 12px;
+  padding: 22px;
   width: 100%;
   max-width: 380px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   text-align: left;
   position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* LÍNEA separadora al final de cada tarjeta */
+/* Línea separadora */
 .plan-card::after {
   content: "";
   display: block;
-  height: 1px;
-  background: #e6e0d6; /* color de la línea */
-  margin-top: 14px;
-  width: calc(100% + 40px); /* extiende un poco la línea fuera de la tarjeta */
-  transform: translateX(-20px);
+  height: 2px;
+  background: #f0d6b3;
+  margin-top: 18px;
+  width: 100%;
+  border-radius: 2px;
 }
 
-/* Para evitar la línea en la última fila (opcional) */
-.planes-container > .plan-card:last-child::after {
-  display: none;
-}
-
-/* Hover sutil para que siga viéndose como tarjeta */
+/* Hover */
 .plan-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
-/* Título con separación */
+/* Título y texto */
 .plan-card h2 {
   color: #ff9800;
-  margin: 0 0 8px;
-  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
 
-/* Texto */
 .plan-card p {
   margin: 6px 0;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* ---------- BOTÓN VOLVER ---------- */
