@@ -144,3 +144,49 @@ footer {
 .plan-card p {
   margin: 5px 0;
 }
+
+/* ---------- BOTÓN VOLVER ---------- */
+.volver-inicio {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-volver {
+  display: inline-block;
+  background-color: #ff7b00;
+  color: white;
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #e66b00;
+}
+
+/* ---------- AJUSTE VISUAL DE CAJITAS ---------- */
+.planes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.plan-card {
+  background-color: #fff;
+  border: 1px solid #ffd699;
+  border-radius: 15px;
+  padding: 20px;
+  width: 90%;
+  max-width: 380px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}

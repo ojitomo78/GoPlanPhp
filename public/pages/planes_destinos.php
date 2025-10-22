@@ -14,28 +14,37 @@ $result = $conn->query($sql);
 </head>
 <body>
   <header>
-    <h1>Planes y Destinos</h1>
-  <nav>
-    <a href="../index.html">Inicio</a>
-  </nav>
+    <div class="header-top">
+      <h1>Planes y Destinos</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Inicio</a>
+    </nav>
   </header>
 
-  <section class="planes-container">
-    <?php
-    if ($result && $result->num_rows > 0) {
-      while ($row = $result->fetch_assoc()) {
-        echo "<div class='plan-card'>";
-        echo "<h2>" . htmlspecialchars($row['nombre_des']) . "</h2>";
-        echo "<p><strong>País:</strong> " . htmlspecialchars($row['país']) . "</p>";
-        echo "<p>" . htmlspecialchars($row['descripción']) . "</p>";
-        echo "<p><strong>Categoría:</strong> " . htmlspecialchars($row['categoría']) . "</p>";
-        echo "<p><strong>Precio base:</strong> $" . htmlspecialchars($row['precio_base']) . "</p>";
-        echo "</div>";
+  <section id="planes">
+    <h2>Explora Nuestros Destinos</h2>
+    <div class="planes-container">
+      <?php
+      if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          echo "<div class='plan-card'>";
+          echo "<h2>" . htmlspecialchars($row['nombre_des']) . "</h2>";
+          echo "<p><strong>País:</strong> " . htmlspecialchars($row['país']) . "</p>";
+          echo "<p>" . htmlspecialchars($row['descripción']) . "</p>";
+          echo "<p><strong>Categoría:</strong> " . htmlspecialchars($row['categoría']) . "</p>";
+          echo "<p><strong>Precio base:</strong> $" . htmlspecialchars($row['precio_base']) . "</p>";
+          echo "</div>";
+        }
+      } else {
+        echo "<p>No hay destinos disponibles.</p>";
       }
-    } else {
-      echo "<p>No hay destinos disponibles.</p>";
-    }
-    ?>
+      ?>
+    </div>
+
+    <div class="volver-inicio">
+      <a href="../index.html" class="btn-volver">← Volver al Inicio</a>
+    </div>
   </section>
 
   <footer>
