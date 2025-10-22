@@ -2,23 +2,22 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Ingreso - GoPlan</title>
+  <title>Ingreso</title>
   <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
   <header>
-    <h1>Ingreso al sistema</h1>
-    <nav><a href="../index.html">Inicio</a></nav>
+    <h1>Ingreso</h1>
   </header>
 
-  <div class="container">
-    <form action="../php/login.php" method="POST" class="formulario">
-      <label>Usuario:</label>
-      <input type="text" name="usuario" required>
-      <label>Contraseña:</label>
-      <input type="password" name="contraseña" required>
-      <button type="submit">Ingresar</button>
-    </form>
-  </div>
+  <form action="login.php" method="POST" class="form-login">
+    <label>Usuario:</label>
+    <input type="text" name="usuario" required>
+
+    <label>Contraseña:</label>
+    <input type="password" name="contrasena" required>
+
+    <button type="submit">Ingresar</button>
+  </form>
 </body>
 </html>
