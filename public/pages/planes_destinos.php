@@ -20,26 +20,17 @@ $result = $conn->query($sql);
     </div>
     <nav>
       <a href="../index.html">Inicio</a>
-      <a href="login.html">Ingresar</a>
-      <a href="registrar_cliente.php">Registrarse</a>
     </nav>
   </header>
 
   <section id="planes">
     <h2>Explora Nuestros Destinos</h2>
+
     <div class="planes-container">
       <?php
       if ($result && $result->num_rows > 0) {
-        // contador para variar imágenes de ejemplo
-        $imagenes = ['caribe.webp', 'aventura.jpg', 'corea.jpg'];
-        $i = 0;
-
         while ($row = $result->fetch_assoc()) {
-          $img = $imagenes[$i % count($imagenes)];
-          $i++;
-
           echo "<div class='plan-card'>";
-          echo "<img src='../image/recursos/$img' alt='Imagen destino'>";
           echo "<h2>" . htmlspecialchars($row['nombre_des']) . "</h2>";
           echo "<p><strong>País:</strong> " . htmlspecialchars($row['país']) . "</p>";
           echo "<p>" . htmlspecialchars($row['descripción']) . "</p>";
