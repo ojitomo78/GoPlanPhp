@@ -1,12 +1,15 @@
 <?php
 session_start();
-include('../php/conexion.php');
+include('/../php/conexion.php');
 
 $usuario = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
 
-$sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND contrasena = '$contrasena'";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM usuarios WHERE usuario = ? AND contrasena = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ss", $usuario, $contrasena);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $data = $result->fetch_assoc();
@@ -14,11 +17,12 @@ if ($result->num_rows > 0) {
     $_SESSION['rol'] = $data['rol'];
 
     if ($data['rol'] === 'admin') {
-        header("Location: registrar_cliente.php");
+        header("Location: ../index.html");
     } else {
-        header("Location: planes_cliente.php");
+        header("Location: ../index.html");
     }
+    exit;
 } else {
-    echo "<script>alert('Usuario o contraseña incorrectos');window.location='login.html';</script>";
+    echo "<script>alert('Usuario o contraseña incorrectos');window.location='../pages/login.html';</script>";
 }
 ?>
