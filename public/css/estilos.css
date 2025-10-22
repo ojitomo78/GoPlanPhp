@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* ---------- ESTILOS GENERALES ---------- */
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #fffaf4;
@@ -9,17 +9,16 @@ body {
 
 /* ---------- HEADER ---------- */
 header {
-  background-color: #ff7b00; /* Naranja principal */
+  background-color: #ff7b00;
   color: white;
   padding: 1rem 0.5rem;
   display: flex;
-  flex-direction: column; /* apila contenido verticalmente */
+  flex-direction: column;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-/* contenedor del logo y título */
 .header-top {
   display: flex;
   align-items: center;
@@ -38,7 +37,7 @@ header {
   margin: 0;
 }
 
-/* menú debajo del título */
+/* ---------- NAV ---------- */
 nav {
   margin-top: 0.6rem;
 }
@@ -56,7 +55,7 @@ nav a:hover {
 
 /* ---------- SECCIONES ---------- */
 section {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 2rem auto;
   padding: 1rem;
   text-align: center;
@@ -67,82 +66,61 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-/* ---------- PLANES ---------- */
-.plan {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  margin: 1rem;
-  display: inline-block;
-  width: 280px;
-  vertical-align: top;
-  transition: transform 0.2s ease;
-}
-
-.plan:hover {
-  transform: translateY(-5px);
-}
-
-.plan h3 {
-  color: #ff7b00;
-}
-
-.plan img {
-  margin-top: 1rem;
-  border-radius: 10px;
-  width: 100%;
-  height: 160px;
-  object-fit: cover; /* evita estiramientos */
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-  background-color: #ff7b00;
-  color: white;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-}
-
+/* ---------- CONTENEDOR DE PLANES ---------- */
 #planes {
-  background-color: #ffe0b3; 
+  background-color: #ffe0b3;
   padding: 2rem 1rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
 #planes h2 {
   color: #d25e00;
 }
 
+/* ---------- GRID DE PLANES ---------- */
 .planes-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-  padding: 40px;
+  gap: 30px;
+  justify-items: center;
+  padding: 20px;
 }
 
+/* ---------- TARJETA DE PLAN ---------- */
 .plan-card {
-  background-color: #fffaf4;
-  border: 1px solid #ffcc80;
+  background-color: #fff;
+  border: 1px solid #ffd699;
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
 }
 
 .plan-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
 .plan-card h2 {
   color: #ff9800;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .plan-card p {
   margin: 5px 0;
+}
+
+.plan-card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 /* ---------- BOTÓN VOLVER ---------- */
@@ -166,27 +144,11 @@ footer {
   background-color: #e66b00;
 }
 
-/* ---------- AJUSTE VISUAL DE CAJITAS ---------- */
-.planes-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 30px;
-  justify-items: center;
-  padding: 20px;
-}
-
-.plan-card {
-  background-color: #fff;
-  border: 1px solid #ffd699;
-  border-radius: 15px;
-  padding: 20px;
-  width: 90%;
-  max-width: 380px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.plan-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #ff7b00;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
 }
