@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('/../php/conexion.php');
+include('conexion.php');
 
 $usuario = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
@@ -16,11 +16,7 @@ if ($result->num_rows > 0) {
     $_SESSION['usuario'] = $data['usuario'];
     $_SESSION['rol'] = $data['rol'];
 
-    if ($data['rol'] === 'admin') {
-        header("Location: ../index.php");
-    } else {
-        header("Location: ../index.php");
-    }
+    header("Location: ../index.php");
     exit;
 } else {
     echo "<script>alert('Usuario o contraseña incorrectos');window.location='../pages/login.html';</script>";
