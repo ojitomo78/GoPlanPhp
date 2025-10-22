@@ -117,17 +117,30 @@ footer {
 
 .planes-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 20px;
-  padding: 20px;
+  padding: 40px;
 }
+
 .plan-card {
-  background-color: #fff8f0;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background-color: #fffaf4;
+  border: 1px solid #ffcc80;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
 .plan-card h2 {
   color: #ff9800;
+  margin-bottom: 10px;
+}
+
+.plan-card p {
+  margin: 5px 0;
 }

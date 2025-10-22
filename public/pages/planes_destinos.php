@@ -15,6 +15,9 @@ $result = $conn->query($sql);
 <body>
   <header>
     <h1>Planes y Destinos</h1>
+  <nav>
+    <a href="../index.html">Inicio</a>
+  </nav>
   </header>
 
   <section class="planes-container">
