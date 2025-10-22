@@ -12,11 +12,12 @@
     </div>
     <nav>
       <a href="../index.php">Inicio</a>
+      <a href="../pages/login.html">Iniciar Sesión</a>
     </nav>
   </header>
 
-  <section class="registro-section">
-    <form action="../php/registro_usuario.php" method="POST" class="form-registro">
+  <section class="login-section">
+    <form action="../php/registro_usuario.php" method="POST" class="form-login">
       <label>Usuario:</label>
       <input type="text" name="usuario" required>
 
@@ -24,6 +25,11 @@
       <input type="password" name="contrasena" required>
 
       <button type="submit">Registrarse</button>
+
+      <p class="link-registro">
+        ¿Ya tienes una cuenta?
+        <a href="../pages/login.html">Inicia sesión</a>
+      </p>
     </form>
   </section>
 
