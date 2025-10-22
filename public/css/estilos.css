@@ -110,8 +110,8 @@ section h2 {
 .planes-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  padding: 50px 60px;
+  gap: 60px;
+  padding: 60px 80px;
   align-items: start;
   justify-items: center;
 }
@@ -126,6 +126,7 @@ section h2 {
   text-align: left;
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 30px;
 }
 
 .plan-card::after {
