@@ -37,7 +37,7 @@ session_start();
         <a href="php/cerrar_sesion.php">Cerrar sesión (<?php echo htmlspecialchars($_SESSION['usuario']); ?>)</a>
       <?php else: ?>
         <!-- Si NO hay sesión iniciada -->
-        <a href="pages/login.php">Ingreso</a>
+        <a href="pages/login.html">Ingreso</a>
       <?php endif; ?>
     </nav>
   </header>
