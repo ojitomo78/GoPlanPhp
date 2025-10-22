@@ -1,57 +1,45 @@
 <?php
 session_start();
-if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'cliente') {
-  header("Location: login.php");
+include('../php/conexion.php');
+
+if (!isset($_SESSION['usuario'])) {
+  header("Location: login.html");
   exit;
 }
 
-require_once __DIR__ . '/../php/conexion.php';
-$usuario = $_SESSION['usuario'];
-
-$query = "SELECT * FROM itinerarios WHERE cliente = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("s", $usuario);
-$stmt->execute();
-$result = $stmt->get_result();
+$sql = "SELECT * FROM itinerario";
+$result = $conn->query($sql);
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mis Itinerarios - GoPlan</title>
+  <title>Planes del Cliente</title>
   <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
   <header>
-    <div class="header-top">
-      <h1>Bienvenido, <?= htmlspecialchars($usuario) ?></h1>
-    </div>
-    <nav>
-      <a href="../index.php">Inicio</a>
-      <a href="../php/logout.php">Cerrar sesión</a>
-    </nav>
+    <h1>Planes del Cliente</h1>
   </header>
 
-  <section class="itinerarios">
-    <h2>Tus Itinerarios</h2>
-    <?php if ($result->num_rows > 0): ?>
-      <table class="tabla-itinerarios">
-        <tr><th>Destino</th><th>Actividad</th><th>Fecha</th></tr>
-        <?php while ($row = $result->fetch_assoc()): ?>
-          <tr>
-            <td><?= htmlspecialchars($row['destino']) ?></td>
-            <td><?= htmlspecialchars($row['actividad']) ?></td>
-            <td><?= htmlspecialchars($row['fecha']) ?></td>
-          </tr>
-        <?php endwhile; ?>
-      </table>
+  <section class="planes-container">
+    <?php if ($result && $result->num_rows > 0): ?>
+      <?php while ($row = $result->fetch_assoc()): ?>
+        <div class="plan-card">
+          <h2><?= htmlspecialchars($row['actividad']) ?></h2>
+          <p><strong>Lugar:</strong> <?= htmlspecialchars($row['lugar']) ?></p>
+          <p><strong>Horario:</strong> <?= htmlspecialchars($row['horario_act']) ?></p>
+          <p><strong>Duración:</strong> <?= htmlspecialchars($row['duracion']) ?></p>
+        </div>
+      <?php endwhile; ?>
     <?php else: ?>
-      <p>No tienes itinerarios registrados.</p>
+      <p>No hay itinerarios disponibles.</p>
     <?php endif; ?>
   </section>
 
-  <footer>
-    <p>© 2025 GoPlan - Todos los derechos reservados</p>
-  </footer>
+  <div class="volver-inicio">
+    <a href="../index.php" class="btn-volver">Volver al inicio</a>
+  </div>
 </body>
 </html>
