@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,9 +28,17 @@
     </div>
 
     <nav>
-      <a href="index.html">Inicio</a>
+      <a href="index.php">Inicio</a>
       <a href="pages/planes_destinos.php">Planes y Destinos</a>
-      <a href="pages/login.html">Ingreso</a>
+
+      <?php if (isset($_SESSION['usuario'])): ?>
+        <!-- Si el usuario ha iniciado sesión -->
+        <a href="pages/planes_cliente.php">Mis Planes</a>
+        <a href="php/cerrar_sesion.php">Cerrar sesión (<?php echo htmlspecialchars($_SESSION['usuario']); ?>)</a>
+      <?php else: ?>
+        <!-- Si NO hay sesión iniciada -->
+        <a href="pages/login.php">Ingreso</a>
+      <?php endif; ?>
     </nav>
   </header>
 
