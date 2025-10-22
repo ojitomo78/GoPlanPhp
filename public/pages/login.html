@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ingreso - GoPlan</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Ingreso al sistema</h1>
+    <nav><a href="../index.html">Inicio</a></nav>
+  </header>
+
+  <div class="container">
+    <form action="../php/login.php" method="POST" class="formulario">
+      <label>Usuario:</label>
+      <input type="text" name="usuario" required>
+      <label>Contraseña:</label>
+      <input type="password" name="contraseña" required>
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
+</body>
+</html>
