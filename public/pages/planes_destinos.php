@@ -19,7 +19,7 @@ $result = $conn->query($sql);
       <h1>Planes y Destinos</h1>
     </div>
     <nav>
-      <a href="../index.html">Inicio</a>
+      <a href="../index.php">Inicio</a>
     </nav>
   </header>
 
@@ -45,7 +45,7 @@ $result = $conn->query($sql);
     </div>
 
     <div class="volver-inicio">
-      <a href="../index.html" class="btn-volver">← Volver al Inicio</a>
+      <a href="../index.php" class="btn-volver">← Volver al Inicio</a>
     </div>
   </section>
 

@@ -27,7 +27,7 @@ $result = $stmt->get_result();
       <h1>Bienvenido, <?= htmlspecialchars($usuario) ?></h1>
     </div>
     <nav>
-      <a href="../index.html">Inicio</a>
+      <a href="../index.php">Inicio</a>
       <a href="../php/logout.php">Cerrar sesión</a>
     </nav>
   </header>

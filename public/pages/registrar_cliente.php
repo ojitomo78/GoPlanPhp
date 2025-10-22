@@ -24,7 +24,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
   <header>
     <h1>Registro de Cliente - GoPlan</h1>
     <nav>
-      <a href="../index.html">Inicio</a>
+      <a href="../index.php">Inicio</a>
     </nav>
   </header>
 

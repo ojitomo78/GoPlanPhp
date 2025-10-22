@@ -17,9 +17,9 @@ if ($result->num_rows > 0) {
     $_SESSION['rol'] = $data['rol'];
 
     if ($data['rol'] === 'admin') {
-        header("Location: ../index.html");
+        header("Location: ../index.php");
     } else {
-        header("Location: ../index.html");
+        header("Location: ../index.php");
     }
     exit;
 } else {
