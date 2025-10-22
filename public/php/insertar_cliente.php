@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("ssssss", $nombre, $documento, $telefono, $correo, $direccion, $fecha_res);
 
     if ($stmt->execute()) {
-        echo "<script>alert('✅ Cliente registrado exitosamente'); window.location.href='index.html';</script>";
+        echo "<script>alert('✅ Cliente registrado exitosamente'); window.location.href='/index.html';</script>";
     } else {
         echo "❌ Error al registrar cliente: " . $stmt->error;
     }
