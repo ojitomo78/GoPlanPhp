@@ -62,7 +62,7 @@ $result = $conn->query($sql);
         }
 
         $nombre = strtolower(str_replace(' ', '_', $row['nombre_des']));
-        $imagen = "../image/planes/" . $nombre . ".jpg";
+        $imagen = "../image/planes/" . $nombre . ".png";
         if (!file_exists($imagen)) {
           $imagen = "../image/planes/default.jpg"; // Imagen por defecto
         }
