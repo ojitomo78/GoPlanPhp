@@ -1,36 +1,45 @@
+<?php
+session_start();
+include('../php/conexion.php');
+
+if (!isset($_SESSION['usuario'])) {
+  header("Location: login.php");
+  exit;
+}
+
+$sql = "SELECT * FROM itinerarios";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Planes y Destinos</title>
+  <title>Planes del Cliente</title>
   <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
   <header>
-    <div class="header-top">
-      <img src="../image/Logo.png" alt="Logo GoPlan">
-      <h1>Explora Nuestros Planes</h1>
-    </div>
-    <nav>
-      <a href="../index.php">Inicio</a>
-      <a href="todos_planes.php">Ver Todos</a>
-    </nav>
+    <h1>Planes del Cliente</h1>
   </header>
 
-  <section class="categorias">
-    <h2>Categorías de Planes</h2>
-    <div class="categoria-container">
-      <a href="aventura.php" class="categoria-card">Aventura</a>
-      <a href="cultural.php" class="categoria-card">Cultural</a>
-      <a href="natural.php" class="categoria-card">Natural</a>
-      <a href="playa.php" class="categoria-card">Playa</a>
-      <a href="romantico.php" class="categoria-card">Romántico</a>
-      <a href="urbano.php" class="categoria-card">Urbano</a>
-    </div>
+  <section class="planes-container">
+    <?php if ($result && $result->num_rows > 0): ?>
+      <?php while ($row = $result->fetch_assoc()): ?>
+        <div class="plan-card">
+          <h2><?= htmlspecialchars($row['actividad']) ?></h2>
+          <p><strong>Lugar:</strong> <?= htmlspecialchars($row['lugar']) ?></p>
+          <p><strong>Horario:</strong> <?= htmlspecialchars($row['horario_act']) ?></p>
+          <p><strong>Duración:</strong> <?= htmlspecialchars($row['duracion']) ?></p>
+        </div>
+      <?php endwhile; ?>
+    <?php else: ?>
+      <p>No hay itinerarios disponibles.</p>
+    <?php endif; ?>
   </section>
 
-  <footer>
-    <p>© 2025 GoPlan - Todos los derechos reservados</p>
-  </footer>
+  <div class="volver-inicio">
+    <a href="../index.php" class="btn-volver">Volver al inicio</a>
+  </div>
 </body>
 </html>
