@@ -271,3 +271,27 @@ footer {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
+.categoria-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  text-align: center;
+}
+
+.categoria-card {
+  background: #fffaf4;
+  border: 2px solid #f0d6b3;
+  border-radius: 12px;
+  padding: 30px 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.categoria-card:hover {
+  background: #ffe0b2;
+  transform: translateY(-5px);
+}
