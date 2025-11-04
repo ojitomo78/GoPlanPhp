@@ -36,7 +36,7 @@ session_start();
       <a href="pages/registrar_cliente.php">Registrar Cliente</a>
     <?php endif; ?>
 
-    <a href="pages/planes_cliente.php">Mis Planes</a>
+    <a href="pages/planes_cliente.php">Itinerarios</a>
     <a href="php/cerrar_sesion.php">Cerrar sesión (<?php echo htmlspecialchars($_SESSION['usuario']); ?>)</a>
   <?php else: ?>
     <a href="pages/login.php">Ingreso</a>
